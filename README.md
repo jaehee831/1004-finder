@@ -1,4 +1,4 @@
-# 천사랭킹 AI - 나에게 딱! 맞는 기부단체 추천
+## 👼취향저격 기부단체 추천 AI
 
 🏆**Patent No. 4020230231908 registered on December 20, 2023**
 
