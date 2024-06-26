@@ -1,4 +1,4 @@
-# 기부단체 추천 알고리즘 
+# 천사랭킹 AI - 나에게 딱! 맞는 기부단체 추천
 
 🏆**Patent No. 4020230231908 registered on December 20, 2023**
 
@@ -17,37 +17,22 @@
 
 ### What it does
 
-This project implements an algorithm to recommend suitable donation organizations to donors. It effectively clusters and recommends donation organizations. The system leverages machine learning to recommend donation organizations based on donors' preferences, aiming to improve accessibility for small and new donation organizations.
+천사랭킹 AI는 기부자의 취향에 딱 맞는 기부단체를 추천해주는 AI 알고리즘입니다. 기부단체를 효과적으로 클러스터링 후, 기부자의 선호도에 맞춰 추천해주는 시스템으로 어렵게만 느껴졌던 기부를 쉽고 재밌게 만들어줍니다.
 
-### Why we used this technology
+### Technology
 
-The system uses machine learning to analyze donors' donation preferences and effectively cluster donation organizations to recommend the most suitable ones. **This enhances donor satisfaction and improves the transparency and accessibility of donation organizations.** 
-
-
+천사랭킹 AI는 기부자의 선호를 분석하고 기부 단체를 효율적으로 클러스터링하기 위해 머신러닝 알고리즘을 사용하여, **기부의 만족감, 기부 단체의 투명성과 신뢰성을 높여 줍니다.** 
 
 ## 📂Methodology
 
-This project collects and preprocesses data from donors and donation organizations to implement an algorithm that clusters and recommends donation organizations. Clustering is based on the characteristics of donation organizations, and the recommendation algorithm uses K-NN (K-nearest neighbor search).
+천사랭킹 AI는 다음과 같은 기술로 구성됩니다. 
 
-### Technical Details
-
-#### Data Preprocessing
-
-This stage involves collecting and preprocessing donor and donation organization data.
-
-- **Donor Data Collection**: Collects donor preference data.
-- **Donor Data Preprocessing**: Cleans and transforms collected donor data into the required format. Donor data consists of responses to donation-related questions.
-- **Donation Organization Data Collection**: Gathers various characteristic information of donation organizations, including the number of employees, total assets, liabilities, net assets, business revenue, etc.
-- **Donation Organization Data Preprocessing**: Removes duplicate data and processes data into a format suitable for clustering. Extracts characteristic information of donation organizations, removes redundancies, and transforms data into a dataset ready for clustering.
-
-#### Donation Organization Recommendation
-
-This stage analyzes donor data to recommend suitable donation organizations.
-
-- **Donation Organization Clustering**: Analyzes donation organization data and groups donation organizations into multiple clusters. Organizations with similar characteristics belong to the same cluster.
-- **Donation Organization Recommendation**: Recommends suitable donation organizations based on donor data. Uses the K-NN algorithm to recommend donation organizations belonging to clusters most similar to the donor.
-
-
+- **기부단체 데이터 수집부**: 외부 서버 또는 사용자 입력을 통해 기부단체 데이터를 수신합니다. 
+- **기부단체 데이터 전처리부**: 기부단체 특징정보 중 유의미한 정보만을 추출합니다.
+- **기부단체 클러스터링부**: 기부단체 클러스터 분포가 가우시안 분포를 른다고 가정, 클러스터 분포가 기부단체 분포에 가장 잘 맞을 수 있도록 fitting합니다. 기부단체들은 유사한 특징정보를 가진 클러스터로 그룹화됩니다. 
+- **기부단체 클러스터링부**: 클러스터링 결과 학습된 클러스터 별 기부단체 클러스터 분포가 가우시안 분포를 른다고 가정, 클러스터 분포가 기부단체 분포에 가장 잘 맞을 수 있도록 fitting합니다. 
+- **기부자 데이터 수집부**: 기부자 단말을 이용해 기부자 데이터를 수집합니다. 
+- **기부단체 추천부**: K-NN 알고리즘을 이용해 응답 데이터 기준 최단 거리에 있는 기부단체 5개를 추천합니다. 
 
 ## 📂Requirement
 
@@ -61,14 +46,11 @@ This stage analyzes donor data to recommend suitable donation organizations.
 ### Setup
 
 1. Install Python 3.x
-2. Install required packages:
+2. Install required packages
 
 ```
-sh
-코드 복사
 pip install pandas scikit-learn numpy
 ```
-
 
 
 ## 📂Implement
@@ -79,8 +61,6 @@ pip install pandas scikit-learn numpy
 2. Run the algorithm with the following command:
 
 ```
-sh
-코드 복사
 python donation_recommendation.py
 ```
 
@@ -133,7 +113,6 @@ project-root/
 │   ├── to_numpy.py
 │   ├── tree.dot
 ```
-
 
 
 ## 📂Contributors
